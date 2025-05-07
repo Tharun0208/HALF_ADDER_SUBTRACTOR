@@ -1,6 +1,10 @@
 # HALF_ADDER_SUBTRACTOR
 
 Implementation-of-Half-Adder-and-Half Subtractor-circuit
+```
+Developed by: THARUN R
+RegisterNumber: 212224240172
+```
 
 **AIM:**
 
@@ -34,9 +38,7 @@ Borrow = A’B
 Figure -02 HALF Subtractor
 
 **Truthtable**
-
-![image](https://github.com/user-attachments/assets/af5f8696-3511-4e18-b6c5-ce1729993f2b)
-
+![DE E-3 truthtable](https://github.com/04Varsha/HALF_ADDER_SUBTRACTOR/assets/149035374/c06bba9c-9c1e-4e92-a1e3-869583ce44c7)
 
 **Procedure**
 
@@ -52,33 +54,40 @@ Figure -02 HALF Subtractor
 
 
 **Program:**
+/* Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
+~~~
+*Half_adder*
+module halfadd_top(a,b,sum,carry);
+input a,b;
+output sum,carry; 
+ assign sum = a^b;
+ assign carry = a & b;
+endmodule
 
-    i)HALF ADDER
-    module ha(a,b,sum,carry);
-    input a,b;
-    output sum,carry;
-    assign sum= (a ^ b);
-    assign carry= ( a & b);
-    endmodule
-    ii)HALF SUBTRACTOR
-    module hs(a,b,difference,borrow);
-    input a,b;
-    output difference,borrow;
-    assign difference= (a ^ b);
-    assign borrow= ( ~a & b);
-    endmodule
-    
-Developed by:Tharun.R RegisterNumber:212224240172
+*Half_subtractor*
+module halfsub_top(a,b,D,Bo);
+input a,b;
+output D,Bo; // Outputs sum and carry for half adder:Outputs difference D,Borrow Bo for half subtractor
+assign D = a ^ b;
+  assign Bo = ~a & b;
+endmodule
+
+~~~
+
 
 **RTL Schematic**
-
-![image](https://github.com/user-attachments/assets/b73ebbf3-1658-46b1-8151-d3604c7c31b3)
-
+![DE E-3 RTL](https://github.com/04Varsha/HALF_ADDER_SUBTRACTOR/assets/149035374/4146d7c9-565b-4389-b8a2-54118b2c261e)
 
 **Output/TIMING Waveform**
 
-![image](https://github.com/user-attachments/assets/04597d7e-ae9f-4f91-8b7c-762eb239dfa9)
+HALF ADDER:
+
+![DE E-3 adder](https://github.com/04Varsha/HALF_ADDER_SUBTRACTOR/assets/149035374/8efe7503-fea8-4272-bf8b-0e334e95cdb1)
+
+HALF SUTRACTOR:
+
+![DE E-3 subtractor](https://github.com/04Varsha/HALF_ADDER_SUBTRACTOR/assets/149035374/5bd0588f-6b33-4352-bfb0-2e33f3f77f13)
 
 
 **Result:**
- Thus the Half adder and Half subtractor are studied and truth table is verified
+The code is excecuted successfully.
